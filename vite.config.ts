@@ -4,8 +4,7 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 export default defineConfig(({ mode }) => ({
-  // Com domínio próprio, usa raiz:
-  base: "/",
+  base: "/twincode-build-flow/", // 👈 AQUI ESTÁ O FIX
 
   server: {
     host: "::",
