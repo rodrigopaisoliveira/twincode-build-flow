@@ -4,13 +4,11 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
+import Portfolio from "./pages/Portfolio";
+import ProjectDetail from "./pages/ProjectDetail";
 import Servicos from "./pages/Servicos";
-import Projetos from "./pages/Projetos";
-import Processo from "./pages/Processo";
-import Testemunhos from "./pages/Testemunhos";
-import FAQ from "./pages/FAQ";
-import Orcamento from "./pages/Orcamento";
-import Contactos from "./pages/Contactos";
+import Sobre from "./pages/Sobre";
+import Contato from "./pages/Contato";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -23,13 +21,11 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/portfolio/:id" element={<ProjectDetail />} />
           <Route path="/servicos" element={<Servicos />} />
-          <Route path="/projetos" element={<Projetos />} />
-          <Route path="/processo" element={<Processo />} />
-          <Route path="/testemunhos" element={<Testemunhos />} />
-          <Route path="/faq" element={<FAQ />} />
-          <Route path="/orcamento" element={<Orcamento />} />
-          <Route path="/contactos" element={<Contactos />} />
+          <Route path="/sobre" element={<Sobre />} />
+          <Route path="/contato" element={<Contato />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
