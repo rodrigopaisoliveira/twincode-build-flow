@@ -34,7 +34,7 @@ const values = [
   },
   {
     title: "Parceria",
-    description: "Trabalhamos lado a lado com nossos clientes para garantir o sucesso de cada projeto.",
+    description: "Trabalhamos lado a lado com os nossos clientes para garantir o sucesso de cada projeto.",
   },
   {
     title: "Transparência",
@@ -46,8 +46,8 @@ const Sobre = () => {
   return (
     <>
       <SEOHead
-        title="Sobre Nós | Twin Code - Quem Somos"
-        description="Conheça a Twin Code e a equipe por trás dos projetos. Leonardo Luz e Rodrigo Oliveira, CEOs e Developers."
+        title="Sobre Nós | TwinCode - Quem Somos"
+        description="Conheça a TwinCode e a equipe por trás dos projetos. Leonardo Luz e Rodrigo Oliveira, CEOs e Developers."
         path="/sobre"
       />
       <Navbar />
@@ -58,11 +58,11 @@ const Sobre = () => {
           <div className="container mx-auto max-w-5xl">
             <div className="text-center mb-16 fade-in">
               <h1 className="text-4xl md:text-6xl font-bold mb-6">
-                Sobre a <span className="gradient-text">Twin Code</span>
+                Sobre a <span className="gradient-text">TwinCode</span>
               </h1>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                Somos uma empresa especializada em criação e desenvolvimento de websites sob medida. 
-                Nossa missão é transformar ideias em experiências digitais memoráveis, combinando 
+                Somos uma empresa especializada em criação e desenvolvimento de websites à medida. 
+                A Nossa missão é transformar ideias em experiências digitais memoráveis ao combinar 
                 design excepcional com tecnologia de ponta.
               </p>
             </div>
@@ -70,7 +70,7 @@ const Sobre = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-20">
               <Card className="p-8 border-2">
                 <Code2 className="text-primary mb-4" size={40} />
-                <h3 className="text-2xl font-bold mb-4">Nossa Visão</h3>
+                <h3 className="text-2xl font-bold mb-4">A Nossa Visão</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   Ser reconhecida como referência em desenvolvimento web em Portugal, 
                   criando soluções que não apenas atendem, mas superam as expectativas dos nossos clientes.
@@ -79,7 +79,7 @@ const Sobre = () => {
 
               <Card className="p-8 border-2">
                 <Code2 className="text-accent mb-4" size={40} />
-                <h3 className="text-2xl font-bold mb-4">Nossa Missão</h3>
+                <h3 className="text-2xl font-bold mb-4">A Nossa Missão</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   Desenvolver websites e aplicações web de alta qualidade que impulsionam 
                   o crescimento dos negócios dos nossos clientes através de soluções personalizadas.
@@ -110,10 +110,10 @@ const Sobre = () => {
           <div className="container mx-auto max-w-5xl">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Nossa Equipa
+                A Nossa Equipa
               </h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                Conheça os fundadores e desenvolvedores por trás da Twin Code
+                Conheça os fundadores e desenvolvedores por trás da TwinCode
               </p>
             </div>
 
@@ -162,14 +162,14 @@ const Sobre = () => {
               </h2>
               <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
                 Estamos prontos para transformar suas ideias em realidade. 
-                Entre em contato e vamos criar algo incrível.
+                Entre em Contacto e vamos criar algo incrível.
               </p>
               <Button
                 asChild
                 size="lg"
                 className="bg-gradient-to-r from-accent to-primary hover:opacity-90 transition-opacity"
               >
-                <Link to="/contato">Entrar em Contato</Link>
+                <Link to="/Contacto">Entrar em Contacto</Link>
               </Button>
             </Card>
           </div>

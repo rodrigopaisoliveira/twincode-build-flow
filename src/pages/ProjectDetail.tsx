@@ -18,7 +18,7 @@ const ProjectDetail = () => {
   return (
     <>
       <SEOHead
-        title={`${project.title} | Portfólio Twin Code`}
+        title={`${project.title} | Portfólio TwinCode`}
         description={project.description}
         path={`/portfolio/${project.id}`}
       />
@@ -125,7 +125,7 @@ const ProjectDetail = () => {
                       asChild
                       className="w-full bg-white text-foreground hover:bg-gray-100"
                     >
-                      <Link to="/contato">Solicitar Orçamento</Link>
+                      <Link to="/Contacto">Solicitar Orçamento</Link>
                     </Button>
                   </Card>
                 </div>

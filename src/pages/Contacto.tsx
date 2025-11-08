@@ -10,7 +10,7 @@ import { SEOHead } from "@/components/ui/seo-head";
 import { useToast } from "@/hooks/use-toast";
 import { Mail, Send } from "lucide-react";
 
-const Contato = () => {
+const Contacto = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
@@ -34,12 +34,12 @@ Mensagem:
 ${formData.mensagem}
       `.trim();
 
-      const mailtoLink = `mailto:twincode2025@gmail.com?subject=Pedido de Orçamento - ${formData.nome}&body=${encodeURIComponent(emailBody)}`;
+      const mailtoLink = `mailto:TwinCode2025@gmail.com?subject=Pedido de Orçamento - ${formData.nome}&body=${encodeURIComponent(emailBody)}`;
       window.location.href = mailtoLink;
 
       toast({
         title: "Mensagem enviada!",
-        description: "Entraremos em contato em breve. Obrigado!",
+        description: "Entraremos em Contacto em breve. Obrigado!",
       });
 
       setFormData({
@@ -62,9 +62,9 @@ ${formData.mensagem}
   return (
     <>
       <SEOHead
-        title="Contato | Twin Code - Solicitar Orçamento"
-        description="Entre em contato com a Twin Code para solicitar um orçamento personalizado para seu projeto web."
-        path="/contato"
+        title="Contacto | TwinCode - Solicitar Orçamento"
+        description="Entre em Contacto com a TwinCode para solicitar um orçamento personalizado para seu projeto web."
+        path="/Contacto"
       />
       <Navbar />
       
@@ -87,10 +87,10 @@ ${formData.mensagem}
                   <Mail className="text-accent mb-4" size={32} />
                   <h3 className="text-xl font-semibold mb-2">Email</h3>
                   <a
-                    href="mailto:twincode2025@gmail.com"
+                    href="mailto:TwinCode2025@gmail.com"
                     className="text-gray-300 hover:text-white transition-colors"
                   >
-                    twincode2025@gmail.com
+                    TwinCode2025@gmail.com
                   </a>
                 </Card>
 
@@ -181,7 +181,7 @@ ${formData.mensagem}
                     </Button>
 
                     <p className="text-xs text-muted-foreground text-center">
-                      Ao enviar este formulário, você concorda em ser contatado pela Twin Code.
+                      Ao enviar este formulário, você concorda em ser contatado pela TwinCode.
                     </p>
                   </form>
                 </Card>
@@ -196,4 +196,4 @@ ${formData.mensagem}
   );
 };
 
-export default Contato;
+export default Contacto;
