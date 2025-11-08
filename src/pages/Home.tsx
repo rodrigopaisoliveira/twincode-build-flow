@@ -177,7 +177,7 @@ const Home = () => {
                 onClick={() => {
                   window.scrollTo({ top: 0, behavior: "smooth" });
                   setTimeout(() => {
-                    window.location.href = "/portfolio";
+                    window.location.href = "/twincode-build-flow/portfolio";
                   }, 200); // pequeno delay para o scroll começar antes da navegação
                 }}
               >
