@@ -231,15 +231,12 @@ const Home = () => {
                 asChild
                 size="lg"
                 className="bg-gradient-to-r from-accent to-primary hover:opacity-90 transition-opacity text-base px-8 py-6 mx-auto w-full sm:w-fit flex items-center justify-center"
-                // REMOVIDO: onClick={() => { window.scrollTo... }} daqui!
+                onClick={() => {
+                  // Rola até o topo da página
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }}
               >
-                <Link 
-                  to="/Contacto"
-                  // ADICIONADO: Rolagem suave simples no Link
-                  onClick={() => {
-                    window.scrollTo({ top: 0, behavior: "smooth" });
-                  }}
-                >
+                <Link to="/Contacto">
                   Solicitar Orçamento
                 </Link>
               </Button>
