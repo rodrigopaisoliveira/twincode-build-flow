@@ -166,12 +166,19 @@ const Sobre = () => {
               </p>
               <Button
                 asChild
-                size="lg"
-                // ADICIONADO: mx-auto para centralizar e classes de responsividade
                 className="bg-gradient-to-r from-accent to-primary hover:opacity-90 transition-opacity **mx-auto w-full sm:w-fit** flex items-center justify-center"
               >
-                <Link to="/Contacto">Entrar em Contacto</Link>
+                <Link
+                  to="/Contacto"
+                  onClick={() => {
+                    // Adiciona a rolagem suave para o topo
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                  }}
+                >
+                  Entrar em Contacto
+                </Link>
               </Button>
+
             </Card>
           </div>
         </section>

@@ -194,18 +194,23 @@ const Home = () => {
 
             {/* 👉 Aqui está o botão ajustado */}
             <div className="text-center">
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-2"
+            <Button
+              asChild // Adicionado asChild
+              size="lg"
+              variant="outline"
+              className="border-2"
+              // REMOVIDO: onClick={() => { window.scrollTo... }}
+            >
+              <Link 
+                to="/Portfolio"
+                // Adicionado o onClick ao Link
                 onClick={() => {
-                    window.scrollTo({ top: 0, behavior: "smooth" });
+                  window.scrollTo({ top: 0, behavior: "smooth" });
                 }}
               >
-                <Link to="/Portfolio">
-                    Ver Todos os Projetos
-                </Link>
-              </Button>
+                Ver Todos os Projetos
+              </Link>
+            </Button>
             </div>
           </div>
         </section>
@@ -222,17 +227,22 @@ const Home = () => {
               <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
                 Entre em contacto conosco e solicite um orçamento personalizado. Vamos transformar a sua ideia em realidade.
               </p>
-            <Button
-              asChild
-              size="lg"
-              className="bg-gradient-to-r from-accent to-primary hover:opacity-90 transition-opacity text-base px-8 py-6 mx-auto w-full sm:w-fit flex items-center justify-center"
-              // ADICIONADO: onClick para rolar a página para o topo suavemente
-              onClick={() => {
-                window.scrollTo({ top: 0, behavior: "smooth" });
-              }}
-            >
-              <Link to="/Contacto">Solicitar Orçamento</Link>
-            </Button>
+              <Button
+                asChild
+                size="lg"
+                className="bg-gradient-to-r from-accent to-primary hover:opacity-90 transition-opacity text-base px-8 py-6 mx-auto w-full sm:w-fit flex items-center justify-center"
+                // REMOVIDO: onClick={() => { window.scrollTo... }} daqui!
+              >
+                <Link 
+                  to="/Contacto"
+                  // ADICIONADO: Rolagem suave simples no Link
+                  onClick={() => {
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                  }}
+                >
+                  Solicitar Orçamento
+                </Link>
+              </Button>
             </Card>
           </div>
         </section>
