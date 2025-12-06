@@ -125,7 +125,15 @@ const ProjectDetail = () => {
                       asChild
                       className="w-full bg-white text-foreground hover:bg-gray-100"
                     >
-                      <Link to="/Contacto">Solicitar Orçamento</Link>
+                      <Link
+                        to="/Contacto"
+                        onClick={() => {
+                          // Adiciona a rolagem suave para o topo
+                          window.scrollTo({ top: 0, behavior: "smooth" });
+                        }}
+                      >
+                        Solicitar Orçamento
+                      </Link>
                     </Button>
                   </Card>
                 </div>

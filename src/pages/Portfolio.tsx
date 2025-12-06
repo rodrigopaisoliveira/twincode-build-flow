@@ -93,40 +93,45 @@ const Portfolio = () => {
             {/* Projects Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {visibleProjects.map((project, index) => (
-                <Link
-                  key={project.id}
-                  to={`/portfolio/${project.id}`}
-                  className="group fade-in"
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  <Card className="overflow-hidden hover:shadow-glow transition-all duration-300 hover-scale border-2 h-full">
-                    <div className="aspect-video overflow-hidden">
-                      <img
-                        src={project.image}
-                        alt={project.title}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                      />
-                    </div>
-                    <div className="p-6">
-                      <div className="text-xs font-semibold text-primary mb-2">
-                        {project.category}
-                      </div>
-                      <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
-                        {project.title}
-                      </h3>
-                      <p className="text-sm text-muted-foreground mb-4">
-                        {project.description}
-                      </p>
-                      <div className="flex items-center text-primary font-medium text-sm">
-                        Ver Projeto
-                        <ArrowRight
-                          className="ml-2 group-hover:translate-x-2 transition-transform"
-                          size={16}
-                        />
-                      </div>
-                    </div>
-                  </Card>
-                </Link>
+<Link
+  key={project.id}
+  to={`/portfolio/${project.id}`}
+  className="group"
+  // LÓGICA DE ROLAGEM SIMPLES E EFICIENTE
+  onClick={() => {
+    // Apenas rola para o topo suavemente. 
+    // O Link cuidará da navegação sem refresh.
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }}
+>
+  <Card className="overflow-hidden hover:shadow-glow transition-all duration-300 hover-scale border-2 h-full">
+    <div className="aspect-video overflow-hidden">
+      <img
+        src={project.image}
+        alt={project.title}
+        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+      />
+    </div>
+    <div className="p-6">
+      <div className="text-xs font-semibold text-primary mb-2">
+        {project.category}
+      </div>
+      <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
+        {project.title}
+      </h3>
+      <p className="text-sm text-muted-foreground mb-4">
+        {project.description}
+      </p>
+      <div className="flex items-center text-primary font-medium text-sm">
+        Ver Projeto
+        <ArrowRight
+          className="ml-2 group-hover:translate-x-2 transition-transform"
+          size={16}
+        />
+      </div>
+    </div>
+  </Card>
+</Link>
               ))}
             </div>
 
@@ -163,9 +168,19 @@ const Portfolio = () => {
                 <Button
                   asChild
                   size="lg"
-                  className="bg-gradient-primary hover:opacity-90"
+                  className="bg-gradient-primary hover:opacity-90 transition-opacity text-lg px-8 py-6 shadow-glow mx-auto sm:w-fit flex items-center justify-center"
                 >
-                  <Link to="/Contacto">Solicitar Orçamento</Link>
+                  <Link
+                    to="/Contacto"
+                    onClick={() => {
+                      // O clique do Link é o que aciona a navegação
+                      window.scrollTo({ top: 0, behavior: "smooth" });
+                      // O Link continua a navegação sem precisar de preventDefault
+                    }}
+                  >
+                    Solicitar Orçamento
+                    <ArrowRight className="ml-2" size={20} />
+                  </Link>
                 </Button>
               </div>
             )}

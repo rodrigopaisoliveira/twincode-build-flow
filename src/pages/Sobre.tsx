@@ -167,7 +167,8 @@ const Sobre = () => {
               <Button
                 asChild
                 size="lg"
-                className="bg-gradient-to-r from-accent to-primary hover:opacity-90 transition-opacity"
+                // ADICIONADO: mx-auto para centralizar e classes de responsividade
+                className="bg-gradient-to-r from-accent to-primary hover:opacity-90 transition-opacity **mx-auto w-full sm:w-fit** flex items-center justify-center"
               >
                 <Link to="/Contacto">Entrar em Contacto</Link>
               </Button>

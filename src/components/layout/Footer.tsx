@@ -17,7 +17,7 @@ export const Footer = () => {
               <span className="text-2xl font-bold">TwinCode</span>
             </div>
             <p className="text-sm text-gray-400 mb-6 max-w-md">
-              Transformamos ideias em sites incríveis. Especialistas em
+              Criamos ideias em sites incríveis. Especialistas em
               desenvolvimento web personalizado.
             </p>
             <div className="flex gap-4">

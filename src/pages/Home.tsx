@@ -50,7 +50,7 @@ const Home = () => {
     <>
       <SEOHead
         title="TwinCode | Desenvolvimento de Websites Profissionais"
-        description="Transformamos ideias em sites incríveis. Criação de websites personalizados, lojas online e landing pages."
+        description="Criamos ideias em sites incríveis. Criação de websites personalizados, lojas online e landing pages."
         path="/"
       />
       <Navbar />
@@ -61,7 +61,7 @@ const Home = () => {
           <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-accent/5 to-transparent"></div>
           <div className="container mx-auto text-center relative z-10 max-w-5xl fade-in">
             <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-              Transformamos ideias em{" "}
+              Criamos ideias em{" "}
               <span className="gradient-text">sites incríveis</span>
             </h1>
             <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
@@ -72,17 +72,27 @@ const Home = () => {
                 asChild
                 size="lg"
                 className="bg-gradient-primary hover:opacity-90 transition-opacity text-lg px-8 py-6 shadow-glow"
+                onClick={() => {
+                  // Rola até o topo da página
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }}
               >
                 <Link to="/Contacto">
                   Solicitar Orçamento
                   <ArrowRight className="ml-2" size={20} />
                 </Link>
               </Button>
+
+
               <Button
                 asChild
                 size="lg"
                 variant="outline"
                 className="text-lg px-8 py-6 border-2"
+                                onClick={() => {
+                  // Rola até o topo da página
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }}
               >
                 <Link to="/portfolio">Ver Portfólio</Link>
               </Button>
@@ -135,36 +145,50 @@ const Home = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
               {featuredProjects.map((project) => (
-                <Link
-                  key={project.id}
-                  to={`/portfolio/${project.id}`}
-                  className="group"
-                >
-                  <Card className="overflow-hidden hover:shadow-glow transition-all duration-300 hover-scale border-2">
-                    <div className="aspect-video overflow-hidden">
-                      <img
-                        src={project.image}
-                        alt={project.title}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                      />
-                    </div>
-                    <div className="p-6">
-                      <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
-                        {project.title}
-                      </h3>
-                      <p className="text-sm text-muted-foreground mb-4">
-                        {project.description}
-                      </p>
-                      <div className="flex items-center text-primary font-medium text-sm">
-                        Ver Detalhes
-                        <ArrowRight
-                          className="ml-2 group-hover:translate-x-2 transition-transform"
-                          size={16}
-                        />
-                      </div>
-                    </div>
-                  </Card>
-                </Link>
+            <Link
+              key={project.id}
+              to={`/portfolio/${project.id}`}
+              className="group"
+              onClick={(e) => {
+                // Previne a navegação imediata para garantir que a rolagem aconteça primeiro
+                e.preventDefault();
+
+                // Rola até o topo da página antes de navegar para o projeto
+                window.scrollTo({ top: 0, behavior: "smooth" });
+
+                // Navega para a página do projeto após a rolagem, sem causar refresh
+                setTimeout(() => {
+                  // Usando o Link para navegação sem refresh
+                  window.location.replace(`/portfolio/${project.id}`);
+                }, 300); // Delay para dar tempo ao scroll
+              }}
+            >
+              <Card className="overflow-hidden hover:shadow-glow transition-all duration-300 hover-scale border-2">
+                <div className="aspect-video overflow-hidden">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
+                    {project.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    {project.description}
+                  </p>
+                  <div className="flex items-center text-primary font-medium text-sm">
+                    Ver Detalhes
+                    <ArrowRight
+                      className="ml-2 group-hover:translate-x-2 transition-transform"
+                      size={16}
+                    />
+                  </div>
+                </div>
+              </Card>
+            </Link>
+
               ))}
             </div>
 
@@ -175,13 +199,13 @@ const Home = () => {
                 variant="outline"
                 className="border-2"
                 onClick={() => {
-                  window.scrollTo({ top: 0, behavior: "smooth" });
-                  setTimeout(() => {
-                    window.location.href = "/twincode-build-flow/portfolio";
-                  }, 200); // pequeno delay para o scroll começar antes da navegação
-                }}
-              >
-                Ver Todos os Projetos
+                    // Rola até o topo da página
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                  }}
+                >
+                  <Link to="/Portfolio">
+                    Ver Todos os Projetos
+                  </Link>
               </Button>
             </div>
           </div>
@@ -199,13 +223,17 @@ const Home = () => {
               <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
                 Entre em contacto conosco e solicite um orçamento personalizado. Vamos transformar a sua ideia em realidade.
               </p>
-              <Button
-                asChild
-                size="lg"
-                className="bg-gradient-to-r from-accent to-primary hover:opacity-90 transition-opacity text-lg px-8 py-6"
-              >
-                <Link to="/Contacto">Solicitar Orçamento</Link>
-              </Button>
+            <Button
+              asChild
+              size="lg"
+              className="bg-gradient-to-r from-accent to-primary hover:opacity-90 transition-opacity text-base px-8 py-6 mx-auto w-full sm:w-fit flex items-center justify-center"
+              // ADICIONADO: onClick para rolar a página para o topo suavemente
+              onClick={() => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
+            >
+              <Link to="/Contacto">Solicitar Orçamento</Link>
+            </Button>
             </Card>
           </div>
         </section>
