@@ -199,13 +199,12 @@ const Home = () => {
                 variant="outline"
                 className="border-2"
                 onClick={() => {
-                    // Rola até o topo da página
                     window.scrollTo({ top: 0, behavior: "smooth" });
-                  }}
-                >
-                  <Link to="/Portfolio">
+                }}
+              >
+                <Link to="/Portfolio">
                     Ver Todos os Projetos
-                  </Link>
+                </Link>
               </Button>
             </div>
           </div>

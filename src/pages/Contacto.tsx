@@ -106,7 +106,7 @@ ${formData.mensagem}
                 <Card className="p-8 border-2 bg-secondary/50">
                   <h3 className="text-lg font-semibold mb-3">Resposta Rápida</h3>
                   <p className="text-sm text-muted-foreground">
-                    Respondemos todos os pedidos de orçamento em até 24 horas úteis.
+                    Respondemos a todos os pedidos de orçamento em até 24 horas úteis.
                   </p>
                 </Card>
               </div>
@@ -122,7 +122,7 @@ ${formData.mensagem}
                         required
                         value={formData.nome}
                         onChange={(e) => setFormData({ ...formData, nome: e.target.value })}
-                        placeholder="Seu nome completo"
+                        placeholder="O seu nome completo"
                         className="mt-2"
                       />
                     </div>
@@ -158,7 +158,7 @@ ${formData.mensagem}
                         required
                         value={formData.mensagem}
                         onChange={(e) => setFormData({ ...formData, mensagem: e.target.value })}
-                        placeholder="Conte-nos sobre seu projeto..."
+                        placeholder="Conte-nos sobre o seu projeto..."
                         rows={6}
                         className="mt-2"
                       />
@@ -171,7 +171,7 @@ ${formData.mensagem}
                       className="w-full bg-gradient-primary hover:opacity-90 transition-opacity"
                     >
                       {isSubmitting ? (
-                        "Enviando..."
+                        "A enviar..."
                       ) : (
                         <>
                           Solicitar Orçamento
@@ -181,7 +181,7 @@ ${formData.mensagem}
                     </Button>
 
                     <p className="text-xs text-muted-foreground text-center">
-                      Ao enviar este formulário, você concorda em ser contatado pela TwinCode.
+                      Ao enviar este formulário, você concorda em ser contactado pela TwinCode.
                     </p>
                   </form>
                 </Card>
